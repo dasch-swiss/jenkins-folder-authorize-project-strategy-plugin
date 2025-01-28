@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>4.41</version>
+        <version>5.6</version>
         <relativePath />
     </parent>
 
@@ -17,11 +17,10 @@
     <packaging>hpi</packaging>
 
     <properties>
-        <revision>1.0</revision>
+        <revision>1.1</revision>
 
-        <jenkins.version>2.332.4</jenkins.version>
-
-        <java.level>8</java.level>
+        <jenkins.baseline>2.479</jenkins.baseline>
+        <jenkins.version>${jenkins.baseline}.1</jenkins.version>
     </properties>
 
     <repositories>
@@ -42,8 +41,8 @@
             <dependency>
                 <!-- Pick up common dependencies for the selected LTS line: https://github.com/jenkinsci/bom#usage -->
                 <groupId>io.jenkins.tools.bom</groupId>
-                <artifactId>bom-2.332.x</artifactId>
-                <version>1451.v15f1fdb_772a_f</version>
+                <artifactId>bom-${jenkins.baseline}.x</artifactId>
+                <version>4023.va_eeb_b_4e45f07</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -62,7 +61,7 @@
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>authorize-project</artifactId>
-            <version>1.4.0</version>
+            <version>2.0.0</version>
         </dependency>
         <dependency>
             <groupId>io.jenkins</groupId>
@@ -72,7 +71,6 @@
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>job-dsl</artifactId>
-            <version>1.79</version>
             <scope>test</scope>
         </dependency>
         <dependency>

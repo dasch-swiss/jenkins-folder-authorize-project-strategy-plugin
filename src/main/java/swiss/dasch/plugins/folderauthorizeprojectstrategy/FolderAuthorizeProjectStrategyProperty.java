@@ -13,7 +13,7 @@ import org.jenkinsci.plugins.authorizeproject.AuthorizeProjectStrategy;
 import org.jenkinsci.plugins.authorizeproject.ProjectQueueItemAuthenticator;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.DataBoundSetter;
-import org.kohsuke.stapler.StaplerRequest;
+import org.kohsuke.stapler.StaplerRequest2;
 
 import com.cloudbees.hudson.plugins.folder.AbstractFolder;
 import com.cloudbees.hudson.plugins.folder.AbstractFolderProperty;
@@ -100,7 +100,7 @@ public class FolderAuthorizeProjectStrategyProperty extends AbstractFolderProper
 		}
 
 		@Override
-		public AbstractFolderProperty<?> newInstance(StaplerRequest req, JSONObject formData) throws FormException {
+		public AbstractFolderProperty<?> newInstance(StaplerRequest2 req, JSONObject formData) throws FormException {
 			if (!formData.getBoolean("enabled")) {
 				formData.clear();
 			}
